@@ -17,7 +17,7 @@ function AddStudent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/students", form);
+    await axios.post("https://student-management-backend-sv4h.onrender.com/students", form);
     alert("Student added!");
     history.push("/students");
   };
