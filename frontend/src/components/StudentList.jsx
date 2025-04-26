@@ -7,13 +7,13 @@ function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/students')
+    axios.get('https://student-management-backend-sv4h.onrender.com/students')
       .then(res => setStudents(res.data))
       .catch(err => console.error(err));
   }, []);
 
   const deleteStudent = async (id) => {
-    await axios.delete(`http://localhost:5000/students/${id}`);
+    await axios.delete(`https://student-management-backend-sv4h.onrender.com/students/${id}`);
     setStudents(students.filter(student => student._id !== id));
     alert('Student deleted!');
   };
