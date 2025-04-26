@@ -14,7 +14,7 @@ function EditStudent() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/students/${id}`)
+      .get(`https://student-management-backend-sv4h.onrender.com/students/${id}`)
       .then((res) => setForm(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -25,7 +25,7 @@ function EditStudent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/students/${id}`, form);
+    await axios.put(`https://student-management-backend-sv4h.onrender.com/students/${id}`, form);
     alert("Student updated successfully!");
     history.push("/students");
   };
